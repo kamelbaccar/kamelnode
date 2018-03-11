@@ -374,7 +374,7 @@
         "npm": "*"
     },
     "scripts": {
-        "dev": "nodemon --ignore node_modules/ app.js",
+        
         "start": "node app.js" 
     },
     "keywords": [
