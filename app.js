@@ -1,7 +1,21 @@
-var http = require('http');
+var express = require("express");
+var app     = express();
+var path    = require("path");
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World!');
-    console.log("a visitor is connecting to the server");
-}).listen(8080);
+
+app.get('/Myapp',function(req,res){
+  res.sendFile(path.join(__dirname+'/Myapp/index.html'));
+  //__dirname : It will resolve to your project folder.
+});
+
+app.get('/about',function(req,res){
+  res.sendFile(path.join(__dirname+'/page.html'));
+});
+
+app.get('/sitemap',function(req,res){
+  res.sendFile(path.join(__dirname+'/page.html'));
+});
+
+app.listen(3000);
+
+console.log("Running at Port 3000");
